@@ -1,0 +1,12 @@
+<% if current_user %>
+  <h1><%= current_user.email %></h1> 
+<div class="container">
+  <h5>client_id: <strong><%= @application.uid %></strong></h5> 
+  <h5>client_secret: <strong><%= @application.secret %></strong></h5> 
+</div>
+<% end %>
+<% if user_signed_in? %>
+<% else %>
+  <%= link_to "Sign in", new_user_session_path %>
+  <%= link_to "Sign up", new_user_registration_path %>
+<% end %>
